@@ -1,0 +1,105 @@
+﻿<Window x:Class="Battle_simulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Battle_simulator"
+        mc:Ignorable="d"
+        Title="Battle Simulator" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <VisualBrush>
+                <VisualBrush.Visual>
+                    <StackPanel Background="White">
+                        <MediaElement x:Name="media_Player"
+                                        MediaEnded="Media_Ended"
+                                        LoadedBehavior="Manual"
+                                        Source="Videos\Main_Window_bg_movie.mp4" ></MediaElement>
+
+                        <MediaElement x:Name="audio_Player"
+                                        MediaEnded="Audio_Ended"
+                                        LoadedBehavior="Manual"
+                                        MediaFailed="Audio_Failed"
+                                        Source="audio\Main_Window_bg_music.mp3" ></MediaElement>
+
+                    </StackPanel>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+
+        <Button
+            x:Name="start_btn"
+            Content="Start"
+            Click="start_click"
+            ClickMode="Release"
+            Margin="5,5,5,5"
+            Width="150"
+            Height="25"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom">
+        </Button>
+
+        <TextBlock Text="BATTLE SIMULATOR!!!"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Width="300"
+                   Foreground="Red"
+                   FontSize="25"
+                   FontStyle="Oblique"
+                   TextWrapping="Wrap" Margin="0,84,0,0"/>
+
+        <!--
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="images\battle_background.jpg" AlignmentX="Center" AlignmentY="Top" />
+        </Grid.Background>
+        -->
+        <!--  
+        <TabControl>
+             Tab for managing transformers 
+            <TabItem Header="Transformers">
+                <StackPanel>
+                    <TextBlock Text="Name" />
+                    <TextBox x:Name="NameTextBox" Width="200"/>
+
+                    <TextBlock Text="Faction" />
+                    <TextBox x:Name="FactionTextBox" Width="200"/>
+
+                    <Button Content="Add Transformer" Width="150" Click="AddTransformer_Click"/>
+                    <Button Content="Remove Transformer" Width="150" Click="RemoveTransformer_Click"/>
+                    
+                </StackPanel>
+                
+            </TabItem>
+
+            Tab for simulating battles 
+            <TabItem Header="Battle">
+                <StackPanel>
+                    <TextBlock Text="First Transformer" />
+                    <ComboBox x:Name="FirstTransformerComboBox" Width="200"/>
+
+                    <TextBlock Text="Second Transformer" />
+                    <ComboBox x:Name="SecondTransformerComboBox" Width="200"/>
+
+                    <Button Content="Simulate Battle" Width="150" Click="SimulateBattle_Click"/>
+                    <TextBlock x:Name="BattleResultTextBlock" FontSize="14"/>
+                </StackPanel>
+            </TabItem>
+
+            Tab for viewing transformers 
+            <TabItem Header="View Transformers">
+                <ListView x:Name="TransformerListView" Width="500" Height="200">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"/>
+                            <GridViewColumn Header="Faction" DisplayMemberBinding="{Binding Faction}" Width="100"/>
+                            <GridViewColumn Header="Wins" DisplayMemberBinding="{Binding Wins}" Width="50"/>
+                            <GridViewColumn Header="Losses" DisplayMemberBinding="{Binding Losses}" Width="50"/>
+                            <GridViewColumn Header="Win Rate" DisplayMemberBinding="{Binding WinRate}" Width="100"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+        </TabControl>
+        -->
+    </Grid>
+</Window>
